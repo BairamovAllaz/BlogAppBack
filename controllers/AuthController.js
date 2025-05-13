@@ -105,7 +105,7 @@ const loginWithGoogle = async (req, res) => {
 const getUserData = async (req, res) => {
   try {
     const [user] = await pool.query(
-      "SELECT id, firstName, lastName, email FROM user WHERE email = ?",
+      "SELECT firstName, lastName, email FROM user WHERE email = ?",
       [req.user.email]
     );
 
